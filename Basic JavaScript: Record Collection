@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My FreeCodeCamp Tests</title>    
-  </head>
-  <body>
-
-    <script>
-
-
-              // Setup
+// Setup
 var collection = {
     "2548": {
       "album": "Slippery When Wet",
@@ -38,27 +28,35 @@ var collection = {
 var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
-
-console.log(collection["5439"].tracks);
-collection["5439"]["tracks"] = ["Test"];
-
-console.log(collection["5439"].tracks);
-collection["5439"].tracks.push("Hi","hello");
-console.log(collection["5439"].tracks);
-
 function updateRecords(id, prop, value) {
-    if(prop !=="tracks" && value !==""){
-    collection[id][prop]=value;       
+
+  if (prop === "tracks" && value !== "") {    
+  console.log(collection[id][prop]);
+
+   if(collection[id][prop]) {
+    collection[id][prop].push(value);   
+    console.log(collection[id][prop]);
+   }
+   else {
+    collection[id][prop]=[value];    
+    console.log("Here");
+   }
+  } else if (value !== "") {
+    console.log(collection[id][prop]);
+    collection[id][prop] = value;
+    console.log("Hi");
+    console.log(collection[id][prop]);
+
+  } else {
+    console.log(collection[id][prop])
+    delete collection[id][prop];
+    console.log(collection[id][prop])
+    
+    console.log("Delete");
   }
+
+  return collection;
 }
 
 // Alter values below to test your code
-//updateRecords(2548, "artist", "ABBA");
-
-//console.log(collection["2548"].artist);
-
-
-    </script>
-
-  </body>
-</html>
+updateRecords(1245, "artist", "ABBA");
