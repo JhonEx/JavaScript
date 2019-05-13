@@ -10,3 +10,84 @@
     // test your code
     const squaredIntegers = squareList(realNumberArray);
     console.log(squaredIntegers);
+    
+    //// More examples: ////////////////////////////////////////////////////////////////////////////////////  
+    
+    
+var officers = [
+  { id: 20, name: 'Captain Piett' },
+  { id: 24, name: 'General Veers' },
+  { id: 56, name: 'Admiral Ozzel' },
+  { id: 88, name: 'Commander Jerjerrod' }
+];
+
+//for each method.
+const offi = [];
+officers.forEach( function (reader){
+  offi.push(reader.id)
+})
+console.log (offi);
+
+//Using arrow functions, .map () -long expresion.
+const offMap = officers.map(function (reader){
+    return reader.id;
+});
+console.log(offMap);
+
+//Using arrow functions, .map () -short expresion.
+const offmap1 = officers.map(officers =>officers.id);
+console.log (offmap1);
+
+var pilots = [
+  {
+    id: 10,
+    name: "Poe Dameron",
+    years: 14,
+  },
+  {
+    id: 2,
+    name: "Temmin 'Snap' Wexley",
+    years: 30,
+  },
+  {
+    id: 41,
+    name: "Tallissan Lintra",
+    years: 16,
+  },
+  {
+    id: 99,
+    name: "Ello Asty",
+    years: 22,
+  }
+];
+// Using arrow function reduce, long version
+const yearExp = pilots.reduce( function (accumulator, pilot){
+  return accumulator + pilot.years;
+},0);
+console.log("Result " +yearExp);
+
+// Using arrow function reduce, shorten version
+const YearExp1 = pilots.reduce( (acc, pilot) => acc + pilot.years,0);
+console.log(YearExp1);
+
+//Using arrow funtion reduce, longer version
+const MostExpePilot = pilots.reduce( function(oldest, pilo){
+  return  oldest.years > pilo.years ? oldest : pilo;
+});
+console.log("Years " + MostExpePilot.years);
+
+//Using arrow funtion reduce, shorten version
+const MostExpePilot1 = pilots.reduce( (old, pil) => old.years > pil.years ? old : pil);
+console.log("Years shorten " + MostExpePilot1.years);
+
+//Using arrow funtion filter, longer version
+
+const filterYears = pilots.filter(function (Picker){
+  return Picker.name ==="Ello Asty";
+});
+console.log(filterYears[0].id);
+
+const filterYears2 = pilots.filter ( (Picker)=> Picker.name === "Ello Asty");
+console.log(filterYears[0].id);
+
+
