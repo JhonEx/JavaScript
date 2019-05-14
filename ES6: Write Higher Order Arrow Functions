@@ -1,15 +1,22 @@
-    
-    const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
-    
-    const squareList = (arr) => {
-      "use strict";
-      const squaredIntegers = arr.filter( (num) => num > 0 && num % parseInt(num) === 0 ).map( (num) => Math.pow(num, 2) );
-      return squaredIntegers;
-    };
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+  "use strict";
+  // change code below this line
+  const squaredIntegers = arr.filter(read => read % 2 === 0 && read > 0).map(squa => Math.pow(squa,2));
 
-    // test your code
-    const squaredIntegers = squareList(realNumberArray);
-    console.log(squaredIntegers);
+  const squaredIntegers2 = arr.filter(read => read>0 && read % parseInt(read)===0).map(read => Math.pow(read,2));
+
+  // change code above this line
+  console.log(squaredIntegers);
+  
+  console.log(squaredIntegers2);
+
+  return squaredIntegers;
+  
+};
+// test your code
+const squaredIntegers = squareList(realNumberArray);
+
     
     //// More examples: ////////////////////////////////////////////////////////////////////////////////////  
     
