@@ -2,7 +2,7 @@ const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
 const squareList = (arr) => {
   "use strict";
   // change code below this line
-  const squaredIntegers = arr.filter(read => read % 2 === 0 && read > 0).map(squa => Math.pow(squa,2));
+  const squaredIntegers = arr.filter(read => read % 1 === 0 && read > 0).map(squa => Math.pow(squa,2));
 
   const squaredIntegers2 = arr.filter(read => read>0 && read % parseInt(read)===0).map(read => Math.pow(read,2));
 
