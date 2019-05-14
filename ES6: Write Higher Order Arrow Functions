@@ -13,7 +13,7 @@
     
     //// More examples: ////////////////////////////////////////////////////////////////////////////////////  
     
-    
+// What you have
 var officers = [
   { id: 20, name: 'Captain Piett' },
   { id: 24, name: 'General Veers' },
@@ -41,22 +41,22 @@ console.log (offmap1);
 var pilots = [
   {
     id: 10,
-    name: "Poe Dameron",
+    name: "Poe Test Dameron",
     years: 14,
   },
   {
     id: 2,
-    name: "Temmin 'Snap' Wexley",
+    name: "Temmin  Test 'Snap' Wexley",
     years: 30,
   },
   {
     id: 41,
-    name: "Tallissan Lintra",
+    name: "Tallissan Test Lintra",
     years: 16,
   },
   {
     id: 99,
-    name: "Ello Asty",
+    name: "Ello Test Asty",
     years: 22,
   }
 ];
@@ -83,12 +83,10 @@ console.log("Years shorten " + MostExpePilot1.years);
 //Using arrow funtion filter, longer version
 
 const filterYears = pilots.filter(function (Picker){
-  return Picker.name ==="Ello Asty";
+  return Picker.name.includes("Test");
 });
 console.log(filterYears[0].id);
 
-const filterYears2 = pilots.filter ( (Picker)=> Picker.name === "Ello Asty");
-console.log(filterYears[0].id);
 
 //////////////////////////////////////// Combining .map(), .reduce(), and .filter() ///
 
