@@ -60,3 +60,36 @@ let a = 8, b = 6;
 })();
 console.log(a); // should be 6
 console.log(b); // should be 8
+
+// Exercise
+
+const profileUpdate = (profileData) => {
+  const {name : nam, age, nationality, location} = profileData;
+  return nam;
+};
+
+const profileUpdate = ({name : nam, age, nationality, location}) =>{
+  return nam;
+}
+
+var a={name : "Jhon", age: "34", nationality : "CO", location :"BOG"};
+console.log(profileUpdate(a={name : "Jhon", age: "34", nationality : "CO", location :"BOG"}));
+
+// Exercise
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+const half = (function() {
+  "use strict"; // do not change this line
+  return function half({min,max}) {
+    return (stats.max + stats.min) / 2.0;
+  };
+
+})();
+console.log(stats); // should be object
+console.log(half(stats)); // should be 28.015
