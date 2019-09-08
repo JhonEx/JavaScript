@@ -18,3 +18,14 @@ function makeList(arr) {
 }
 const resultDisplayArray = makeList(result.failure);
 console.log(resultDisplayArray);
+
+// Objeect Literal
+
+const createPerson = (name,age,gender) => {
+  "use strict";
+  return{
+  name,age,gender
+  }
+}
+console.log(createPerson("Jhon", 34, "Male"));
+
