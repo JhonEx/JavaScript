@@ -1,0 +1,21 @@
+///Exercise
+const createPerson = (name, age, gender) => {
+  "use strict";
+  return {
+    name,
+    age,
+    gender
+  };
+};
+console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
+
+//Exercise
+
+const bicycle = {
+  gear : 2,
+  setGear(newGear){
+    this.gear = newGear;
+  }
+};
+console.log(bicycle.setGear(3));
+console.log(bicycle.gear);
