@@ -17,3 +17,16 @@ export { capitalizeString, foo }
 "use strict";
 export const foo = "bar";
 export const bar = "foo";
+
+// To import 
+import * as myCapitalize from "capitalize_strings";
+"use strict";
+
+// Default Export Fallback value
+export default function subtract(x,y) {return x - y;}
+
+// Import a default export
+import subtract from "math_functions";
+"use strict";
+var sub = subtract(7,4);
+console.log(sub);
