@@ -65,3 +65,30 @@ let myRegex = /s+/g; // Change this line
 let result = difficultSpelling.match(myRegex);
 console.log(result);
 
+//Match Characters that Occur Zero or More Times
+let soccerWord = "goooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+console.log(soccerWord.match(goRegex));
+console.log(gPhrase.match(goRegex));
+console.log(oPhrase.match(goRegex));
+
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/; // Change this line
+let result = chewieQuote.match(chewieRegex);
+console.log(result);
+
+//Find Characters with Lazy Matching
+let text = "titanic";
+let myRegex = /t[a-z]*?i/; // Change this line
+let result = text.match(myRegex);
+console.log(result);
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // Change this line
+//let myRegex = /<[a-z0-1]*?>/; // Change this line
+let result = text.match(myRegex);
+console.log(result);
+
+
