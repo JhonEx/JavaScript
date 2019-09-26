@@ -173,3 +173,10 @@ let haStr = "Hazzzzah";
 let haRegex = /Haz{4,30}ah/;
 let result = haRegex.test(haStr);
 console.log(haStr.match(haRegex));
+
+// Specify Exact Number of Matches
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
+console.log(timStr.match(timRegex));
