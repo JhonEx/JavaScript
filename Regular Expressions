@@ -137,4 +137,39 @@ let noNumRegex = /\D/g; // Change this line
 let result = numString.match(noNumRegex);
 console.log(result)
 
+//Restrict Possible Usernames
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z]{2,}\d*$/i; // Change this line            
+let result = userCheck.test(username);
+let resultt = username.match(userCheck);
+console.log(result);
+console.log(resultt);
 
+//Match Whitespace
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result = sample.match(countWhiteSpace).length;
+console.log(result);
+
+//Match Non-Whitespace Characters
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
+console.log(result);
+
+// Specify Upper and Lower Number of Matches
+let A4 = "aaaah";
+let multipleA = /a{3,5}h/;
+console.log(multipleA.test(A4));
+console.log(A4.match(multipleA));
+
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6}\sno/; // Change this line              
+let result = ohRegex.test(ohStr);
+console.log(ohStr.match(ohRegex));
+
+//Specify Only the Lower Number of Matches
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,30}ah/;
+let result = haRegex.test(haStr);
+console.log(haStr.match(haRegex));
