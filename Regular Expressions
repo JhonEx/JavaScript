@@ -126,7 +126,6 @@ numbers.match(shortHand); // Returns ["%"]
 sentence.match(shortHand); // Returns ["!"]
 
 //Match All Numbers
-let numString = "Your sandwich will be $5.00";
 let numRegex = /\d/g; // Change this line
 let result = numString.match(numRegex);
 console.log(result);
@@ -175,8 +174,74 @@ let result = haRegex.test(haStr);
 console.log(haStr.match(haRegex));
 
 // Specify Exact Number of Matches
-
 let timStr = "Timmmmber";
 let timRegex = /Tim{4}ber/; // Change this line
 let result = timRegex.test(timStr);
 console.log(timStr.match(timRegex));
+
+//Check for All or None
+let american = "color";
+let british = "colour";
+let rainboRegex = /colou?r/
+console.log(rainboRegex.test(american));
+console.log(rainboRegex.test(british));
+
+let favWord = "favorite";
+let favRegex = /favou?rite/; // Change this line
+let result = favRegex.test(favWord);
+console.log(result);
+
+//Positive and Negative Lookahead
+let quit ="qu";
+let noquit = "qt";
+let quRegex = /q(?=u)/;
+let qRegex = /q(?!u)/;
+let result = quit.match(quRegex);
+let result2 = noquit.match(qRegex);
+
+console.log(result);
+console.log(quRegex.test(quit));
+
+console.log(result2);
+console.log(qRegex.test(quit));
+
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+let result3 = password.match(checkPass);
+console.log(checkPass.test(password));
+console.log(result3);
+
+let sampleWord = "abc123";
+let pwRegex = /(?=\w{5,})(?=\D*\d{2})/;
+let result = pwRegex.test(sampl
+
+//Reuse Patterns Using Capture Groups
+let repeatStr = "regex regex";
+let repeatRegex = /(\w+)\s\1/;
+console.log(repeatRegex.test(repeatStr));
+console.log(repeatStr.match(repeatRegex));
+
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
+let result = reRegex.test(repeatNum);
+console.log(repeatNum.match(reRegex));
+
+// Use Capture Groups to Search and Replace
+let wrongTest = "The sky is silver";
+let silverRegex =/silver/;
+console.log(wrongTest.replace(silverRegex,"blue"));
+
+let result = "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
+console.log(result);
+let huhText = "This sandwich is good.";
+let fixRegex = /good/; // Change this line
+let replaceText = "okey-dokey"; // Change this line
+let result = huhText.replace(fixRegex, replaceText);
+console.log(result);
+
+//Remove Whitespace from Start and End
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // Change this line
+let result = hello.replace(wsRegex, ''); // Change this line
+console.log(result);
+
