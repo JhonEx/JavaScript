@@ -1,0 +1,60 @@
+//Multi dimensional array
+let complexArray =[
+    [
+        {
+            one: 1,
+            two: 2
+        },
+        {
+            three: 3,
+            four: 4
+        }
+    ],
+    [
+        {
+            a: "a",
+            b: "b"
+        },
+        {
+            c: "c",
+            d:"d"
+        }
+    ]
+];
+
+console.log(complexArray[1][1].c);
+
+//Push and unshift
+let twentyThree = 'XXIII';
+let romanNumerals = ['XXI', 'XXII'];
+
+romanNumerals.unshift('XIX', 'XX');
+// now equals ['XIX', 'XX', 'XXI', 'XXII']
+
+romanNumerals.push(twentyThree);
+// now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']
+
+//Remove pop and shift
+function popShift(arr) {
+  let popped = arr.pop(); // change this line
+  let shifted = arr.shift(); // change this line
+  return [shifted, popped];
+}
+
+// do not change code below this line
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
+
+// Removing using splice()
+let array = ['today', 'was', 'not', 'so', 'great'];
+array.splice(2,2);
+console.log(array);
+
+let array1 = ['I', 'am', 'feeling', 'really', 'happy'];
+let newArray = array1.splice(3,2);
+console.log(newArray);
+
+function sumOfTen(arr) {
+  arr.splice(1,2);
+  return arr.reduce((a, b) => a + b);
+}
+console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
