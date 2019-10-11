@@ -58,3 +58,51 @@ function sumOfTen(arr) {
   return arr.reduce((a, b) => a + b);
 }
 console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
+
+//Add Items Using splice() -- Three parameters
+function colorChange(arr, index, newColor){
+  arr.splice(index, 1, newColor);
+  return arr;
+}
+let colorScheme =['#878787', '#a08794', '#bb7e8c', '#c9b6be', '#d1becf'];
+colorScheme = colorChange(colorScheme, 2, '#332327');
+console.log(colorScheme);
+
+//other from above
+function htmlColorNames(arr, index, newColor, newColor2) {
+  arr.splice(index,2,newColor, newColor2);
+  return arr;
+} 
+let colors = ['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick'];
+colors = htmlColorNames(colors, 0, 'DarkSalmon', 'BlanchedAlmond');
+console.log(colors);
+
+function htmlColorNames(arr) {
+  // change code below this line
+  arr.splice(0, 2, "DarkSalmon", "BlanchedAlmond");
+  // change code above this line
+  return arr;
+} 
+ 
+// do not change code below this line
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));
+
+//Copy Array Items Using slice()
+function forecast(arr) {
+  arr.slice(3, 4);
+  let newArray = arr.slice(2, 4);
+  return newArray;
+}
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+//Copy an Array with the Spread Operator
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    newArr.push([...arr]);
+    num--;
+  }
+  return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
+
